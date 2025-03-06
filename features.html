@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>TechTrend Innovations - Features</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #0d1b2a; color: #e0e1dd; }
+        nav { background: #1b263b; padding: 15px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #00d4ff; text-decoration: none; margin: 0 20px; font-size: 18px; text-shadow: 0 0 5px #00d4ff; }
+        nav a:hover { color: #80eaff; }
+        .features { padding: 50px; text-align: center; background: #415a77; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        h2 { color: #00d4ff; font-size: 36px; text-shadow: 0 0 10px #00d4ff; margin-bottom: 50px; }
+        .orbit-container { position: relative; width: 300px; height: 300px; margin: 0 auto; }
+        .feature-orb { position: absolute; width: 100px; height: 100px; background: rgba(0, 212, 255, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; box-shadow: 0 0 15px #00d4ff; }
+        .orb1 { animation: orbit 8s infinite linear; top: 0; left: 100px; }
+        .orb2 { animation: orbit 8s infinite linear 2s; top: 100px; left: 0; }
+        .orb3 { animation: orbit 8s infinite linear 4s; top: 100px; left: 200px; }
+        @keyframes orbit {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(100px, 100px); }
+            50% { transform: translate(0, 200px); }
+            75% { transform: translate(-100px, 100px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="features.html">Features</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="features">
+      <h2>Why Choose Us?</h2>
+      <div class="orbit-container">
+        <div class="feature-orb orb1">Advanced Sensors</div>
+        <div class="feature-orb orb2">Wireless Tech</div>
+        <div class="feature-orb orb3">Sleek Design</div>
+      </div>
+    </div>
+  </body>
+</html>

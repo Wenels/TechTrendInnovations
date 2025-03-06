@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>TechTrend Innovations - Products</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #0d1b2a; color: #e0e1dd; }
+        nav { background: #1b263b; padding: 15px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #00d4ff; text-decoration: none; margin: 0 20px; font-size: 18px; text-shadow: 0 0 5px #00d4ff; }
+        nav a:hover { color: #80eaff; }
+        .products { padding: 50px; text-align: center; min-height: 100vh; }
+        h2 { color: #00d4ff; font-size: 36px; text-shadow: 0 0 10px #00d4ff; margin-bottom: 30px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .product-card { perspective: 1000px; height: 300px; }
+        .card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+        .product-card:hover .card-inner { transform: rotateY(180deg); }
+        .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: #415a77; border-radius: 15px; padding: 20px; }
+        .card-front { z-index: 2; }
+        .card-back { transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; text-align: center; }
+        .card-front img { width: 100%; border-radius: 10px; filter: drop-shadow(0 0 10px #00d4ff); }
+        .card-front h3, .card-back h3 { color: #00d4ff; margin: 10px 0; }
+        .card-front p, .card-back p { font-size: 18px; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="features.html">Features</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="products">
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="1.jpg" alt="Smartwatch">
+              <h3>TechWatch X</h3>
+              <p>$199.99</p>
+            </div>
+            <div class="card-back">
+              <h3>TechWatch X</h3>
+              <p>Tracks fitness, notifications, and more!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="2.jpg" alt="Earbuds">
+              <h3>EchoBuds</h3>
+              <p>$129.99</p>
+            </div>
+            <div class="card-back">
+              <h3>EchoBuds</h3>
+              <p>Noise-canceling, 20-hour battery!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="3.jpg" alt="Drone">
+              <h3>SkyDrone Pro</h3>
+              <p>$299.99</p>
+            </div>
+            <div class="card-back">
+              <h3>SkyDrone Pro</h3>
+              <p>4K camera, 30-min flight time!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="4.jpg" alt="Speaker">
+              <h3>SoundPulse</h3>
+              <p>$89.99</p>
+            </div>
+            <div class="card-back">
+              <h3>SoundPulse</h3>
+              <p>360° sound, waterproof!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="5.jpg" alt="Phone">
+              <h3>NovaPhone</h3>
+              <p>$599.99</p>
+            </div>
+            <div class="card-back">
+              <h3>NovaPhone</h3>
+              <p>5G, triple camera system!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="6.jpg" alt="Laptop">
+              <h3>UltraBook Z</h3>
+              <p>$999.99</p>
+            </div>
+            <div class="card-back">
+              <h3>UltraBook Z</h3>
+              <p>16GB RAM, 1TB SSD!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="7.jpg" alt="Headphones">
+              <h3>AudioPeak</h3>
+              <p>$179.99</p>
+            </div>
+            <div class="card-back">
+              <h3>AudioPeak</h3>
+              <p>Over-ear, 40-hour battery!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="8.jpg" alt="Camera">
+              <h3>PixelSnap</h3>
+              <p>$349.99</p>
+            </div>
+            <div class="card-back">
+              <h3>PixelSnap</h3>
+              <p>24MP, 4K video recording!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="9.jpg" alt="Tablet">
+              <h3>TabTrend</h3>
+              <p>$399.99</p>
+            </div>
+            <div class="card-back">
+              <h3>TabTrend</h3>
+              <p>10-inch display, stylus support!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="10.jpg" alt="VR Headset">
+              <h3>VisionVR</h3>
+              <p>$499.99</p>
+            </div>
+            <div class="card-back">
+              <h3>VisionVR</h3>
+              <p>Immersive VR, 120Hz refresh!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="12.jpg" alt="Smart Light">
+              <h3>LumiGlow</h3>
+              <p>$59.99</p>
+            </div>
+            <div class="card-back">
+              <h3>LumiGlow</h3>
+              <p>Color-changing, app-controlled!</p>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="13.jpg" alt="Charger">
+              <h3>PowerHub</h3>
+              <p>$39.99</p>
+            </div>
+            <div class="card-back">
+              <h3>PowerHub</h3>
+              <p>65W fast charging, multi-port!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

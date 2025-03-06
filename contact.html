@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>TechTrend Innovations - Contact</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #0d1b2a; color: #e0e1dd; position: relative; min-height: 100vh; overflow: hidden; }
+        nav { background: #1b263b; padding: 15px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #00d4ff; text-decoration: none; margin: 0 20px; font-size: 18px; text-shadow: 0 0 5px #00d4ff; }
+        nav a:hover { color: #80eaff; }
+        canvas { position: absolute; top: 0; left: 0; z-index: 0; }
+        .contact { padding: 50px; text-align: center; position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        h2 { color: #00d4ff; font-size: 36px; text-shadow: 0 0 10px #00d4ff; margin-bottom: 30px; }
+        .contact-form { max-width: 500px; margin: 0 auto; }
+        input, textarea, button { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 5px; background: #1b263b; color: #e0e1dd; box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); transition: box-shadow 0.3s; animation: bounceIn 0.8s ease-out; }
+        input:focus, textarea:focus { outline: none; box-shadow: 0 0 20px #00d4ff; }
+        button { background: #00d4ff; color: #0d1b2a; cursor: pointer; }
+        button:hover { transform: scale(1.05); box-shadow: 0 0 15px #00d4ff; }
+        #message { margin-top: 10px; color: #00d4ff; }
+        @keyframes bounceIn { 0% { transform: translateY(50px); opacity: 0; } 60% { transform: translateY(-10px); opacity: 1; } 100% { transform: translateY(0); } }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="features.html">Features</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <canvas id="particles"></canvas>
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-form">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <textarea id="message-text" placeholder="Message" rows="5"></textarea>
+        <button onclick="submitForm()">Send</button>
+        <p id="message"></p>
+      </div>
+    </div>
+    <script>
+      // Particle Animation
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const particles = [];
+        for (let i = 0; i < 50; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 3 + 1,
+                speed: Math.random() * 1 + 0.5
+            });
+        }
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 212, 255, 0.5)';
+                ctx.fill();
+                p.y -= p.speed;
+                if (p.y < 0) p.y = canvas.height;
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Form Submission
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const text = document.getElementById('message-text').value;
+            if (name && email && text) {
+                document.getElementById('message').innerText = `Thanks, ${name}! We'll respond soon.`;
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message-text').value = '';
+            } else {
+                document.getElementById('message').innerText = "Please fill all fields!";
+            }
+        }
+    </script>
+  </body>
+</html>

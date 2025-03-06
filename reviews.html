@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>TechTrend Innovations - Reviews</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #0d1b2a; color: #e0e1dd; overflow: hidden; }
+        nav { background: #1b263b; padding: 15px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #00d4ff; text-decoration: none; margin: 0 20px; font-size: 18px; text-shadow: 0 0 5px #00d4ff; }
+        nav a:hover { color: #80eaff; }
+        .reviews { padding: 50px; text-align: center; background: #415a77; min-height: 100vh; position: relative; overflow: hidden; }
+        h2 { color: #00d4ff; font-size: 36px; text-shadow: 0 0 10px #00d4ff; margin-bottom: 30px; position: relative; z-index: 10; }
+        .review-container { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+        .review { position: absolute; width: 220px; padding: 15px; background: rgba(119, 141, 169, 0.9); border-radius: 10px; box-shadow: 0 0 15px rgba(0, 212, 255, 0.5); text-align: center; transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s; font-size: 14px; }
+        .review:hover { transform: scale(1.1); opacity: 1; box-shadow: 0 0 25px #00d4ff; animation-play-state: paused; z-index: 10; }
+        /* Distribute 50 reviews across 10 columns with varying speeds and delays */
+        .review:nth-child(1) { left: 2%; animation: cascade 15s infinite linear; }
+        .review:nth-child(2) { left: 12%; animation: cascade 16s infinite linear 0.3s; }
+        .review:nth-child(3) { left: 22%; animation: cascade 14s infinite linear 0.6s; }
+        .review:nth-child(4) { left: 32%; animation: cascade 17s infinite linear 0.9s; }
+        .review:nth-child(5) { left: 42%; animation: cascade 13s infinite linear 1.2s; }
+        .review:nth-child(6) { left: 52%; animation: cascade 18s infinite linear 1.5s; }
+        .review:nth-child(7) { left: 62%; animation: cascade 15s infinite linear 1.8s; }
+        .review:nth-child(8) { left: 72%; animation: cascade 16s infinite linear 2.1s; }
+        .review:nth-child(9) { left: 82%; animation: cascade 14s infinite linear 2.4s; }
+        .review:nth-child(10) { left: 92%; animation: cascade 17s infinite linear 2.7s; }
+        .review:nth-child(11) { left: 2%; animation: cascade 13s infinite linear 3s; }
+        .review:nth-child(12) { left: 12%; animation: cascade 18s infinite linear 3.3s; }
+        .review:nth-child(13) { left: 22%; animation: cascade 15s infinite linear 3.6s; }
+        .review:nth-child(14) { left: 32%; animation: cascade 16s infinite linear 3.9s; }
+        .review:nth-child(15) { left: 42%; animation: cascade 14s infinite linear 4.2s; }
+        .review:nth-child(16) { left: 52%; animation: cascade 17s infinite linear 4.5s; }
+        .review:nth-child(17) { left: 62%; animation: cascade 13s infinite linear 4.8s; }
+        .review:nth-child(18) { left: 72%; animation: cascade 18s infinite linear 5.1s; }
+        .review:nth-child(19) { left: 82%; animation: cascade 15s infinite linear 5.4s; }
+        .review:nth-child(20) { left: 92%; animation: cascade 16s infinite linear 5.7s; }
+        .review:nth-child(21) { left: 2%; animation: cascade 14s infinite linear 6s; }
+        .review:nth-child(22) { left: 12%; animation: cascade 17s infinite linear 6.3s; }
+        .review:nth-child(23) { left: 22%; animation: cascade 13s infinite linear 6.6s; }
+        .review:nth-child(24) { left: 32%; animation: cascade 18s infinite linear 6.9s; }
+        .review:nth-child(25) { left: 42%; animation: cascade 15s infinite linear 7.2s; }
+        .review:nth-child(26) { left: 52%; animation: cascade 16s infinite linear 7.5s; }
+        .review:nth-child(27) { left: 62%; animation: cascade 14s infinite linear 7.8s; }
+        .review:nth-child(28) { left: 72%; animation: cascade 17s infinite linear 8.1s; }
+        .review:nth-child(29) { left: 82%; animation: cascade 13s infinite linear 8.4s; }
+        .review:nth-child(30) { left: 92%; animation: cascade 18s infinite linear 8.7s; }
+        .review:nth-child(31) { left: 2%; animation: cascade 15s infinite linear 9s; }
+        .review:nth-child(32) { left: 12%; animation: cascade 16s infinite linear 9.3s; }
+        .review:nth-child(33) { left: 22%; animation: cascade 14s infinite linear 9.6s; }
+        .review:nth-child(34) { left: 32%; animation: cascade 17s infinite linear 9.9s; }
+        .review:nth-child(35) { left: 42%; animation: cascade 13s infinite linear 10.2s; }
+        .review:nth-child(36) { left: 52%; animation: cascade 18s infinite linear 10.5s; }
+        .review:nth-child(37) { left: 62%; animation: cascade 15s infinite linear 10.8s; }
+        .review:nth-child(38) { left: 72%; animation: cascade 16s infinite linear 11.1s; }
+        .review:nth-child(39) { left: 82%; animation: cascade 14s infinite linear 11.4s; }
+        .review:nth-child(40) { left: 92%; animation: cascade 17s infinite linear 11.7s; }
+        .review:nth-child(41) { left: 2%; animation: cascade 13s infinite linear 12s; }
+        .review:nth-child(42) { left: 12%; animation: cascade 18s infinite linear 12.3s; }
+        .review:nth-child(43) { left: 22%; animation: cascade 15s infinite linear 12.6s; }
+        .review:nth-child(44) { left: 32%; animation: cascade 16s infinite linear 12.9s; }
+        .review:nth-child(45) { left: 42%; animation: cascade 14s infinite linear 13.2s; }
+        .review:nth-child(46) { left: 52%; animation: cascade 17s infinite linear 13.5s; }
+        .review:nth-child(47) { left: 62%; animation: cascade 13s infinite linear 13.8s; }
+        .review:nth-child(48) { left: 72%; animation: cascade 18s infinite linear 14.1s; }
+        .review:nth-child(49) { left: 82%; animation: cascade 15s infinite linear 14.4s; }
+        .review:nth-child(50) { left: 92%; animation: cascade 16s infinite linear 14.7s; }
+        @keyframes cascade {
+            0% { transform: translateY(100vh); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="features.html">Features</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="reviews">
+      <h2>What Customers Say</h2>
+      <div class="review-container">
+        <div class="review">"The TechWatch X is a game-changer!" - Mike T.</div>
+        <div class="review">"Earbuds with insane sound quality!" - Emily R.</div>
+        <div class="review">"Drone flies like a dream!" - Sam K.</div>
+        <div class="review">"SoundPulse fills the room!" - Lisa M.</div>
+        <div class="review">"NovaPhone is super fast!" - Jake P.</div>
+        <div class="review">"UltraBook Z is a powerhouse!" - Sarah W.</div>
+        <div class="review">"AudioPeak feels premium!" - Tom H.</div>
+        <div class="review">"PixelSnap shots are stunning!" - Anna B.</div>
+        <div class="review">"TabTrend is perfect for work!" - Chris D.</div>
+        <div class="review">"VisionVR is mind-blowing!" - Rachel L.</div>
+        <div class="review">"LumiGlow lights up my life!" - Ben S.</div>
+        <div class="review">"PowerHub charges everything!" - Kelly G.</div>
+        <div class="review">"TechWatch X is sleek!" - David M.</div>
+        <div class="review">"EchoBuds are a steal!" - Laura P.</div>
+        <div class="review">"SkyDrone Pro is epic!" - Ryan J.</div>
+        <div class="review">"SoundPulse rocks!" - Tina K.</div>
+        <div class="review">"NovaPhone’s camera shines!" - Mark L.</div>
+        <div class="review">"UltraBook Z is fast!" - Julia N.</div>
+        <div class="review">"AudioPeak bass is unreal!" - Greg F.</div>
+        <div class="review">"PixelSnap is pro-grade!" - Sophie C.</div>
+        <div class="review">"TabTrend boosts productivity!" - Alex R.</div>
+        <div class="review">"VisionVR feels futuristic!" - Emma T.</div>
+        <div class="review">"LumiGlow is smart!" - Nick B.</div>
+        <div class="review">"PowerHub is compact!" - Zoe W.</div>
+        <div class="review">"TechWatch X tracks perfectly!" - Liam O.</div>
+        <div class="review">"EchoBuds fit great!" - Mia H.</div>
+        <div class="review">"SkyDrone Pro is stable!" - Ethan D.</div>
+        <div class="review">"SoundPulse is loud!" - Olivia S.</div>
+        <div class="review">"NovaPhone is smooth!" - Noah A.</div>
+        <div class="review">"UltraBook Z is light!" - Ava E.</div>
+        <div class="review">"AudioPeak is comfy!" - Lucas P.</div>
+        <div class="review">"PixelSnap is crisp!" - Isabella G.</div>
+        <div class="review">"TabTrend is versatile!" - Mason V.</div>
+        <div class="review">"VisionVR is immersive!" - Charlotte U.</div>
+        <div class="review">"LumiGlow is cool!" - James Q.</div>
+        <div class="review">"PowerHub is quick!" - Lily Z.</div>
+        <div class="review">"TechWatch X is stylish!" - Henry I.</div>
+        <div class="review">"EchoBuds are clear!" - Sophia Y.</div>
+        <div class="review">"SkyDrone Pro is fun!" - Jack X.</div>
+        <div class="review">"SoundPulse is portable!" - Chloe W.</div>
+        <div class="review">"NovaPhone is reliable!" - Daniel V.</div>
+        <div class="review">"UltraBook Z is sleek!" - Amelia U.</div>
+        <div class="review">"AudioPeak is durable!" - Logan T.</div>
+        <div class="review">"PixelSnap is amazing!" - Harper S.</div>
+        <div class="review">"TabTrend is handy!" - Elijah R.</div>
+        <div class="review">"VisionVR is unreal!" - Scarlett Q.</div>
+        <div class="review">"LumiGlow is bright!" - Owen P.</div>
+        <div class="review">"PowerHub is powerful!" - Grace O.</div>
+        <div class="review">"TechWatch X is awesome!" - Carter N.</div>
+        <div class="review">"EchoBuds are top-notch!" - Evelyn M.</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>TechTrend Innovations - Home</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #0d1b2a; color: #e0e1dd; }
+        nav { background: #1b263b; padding: 15px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #00d4ff; text-decoration: none; margin: 0 20px; font-size: 18px; text-shadow: 0 0 5px #00d4ff; }
+        nav a:hover { color: #80eaff; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(45deg, #1b263b, #415a77); }
+        h1 { color: #00d4ff; font-size: 48px; text-shadow: 0 0 15px #00d4ff; animation: pulseGlow 2s infinite alternate; }
+        .cube { width: 200px; height: 200px; position: relative; transform-style: preserve-3d; animation: rotateCube 10s infinite linear; margin-top: 20px; }
+        .cube-face { position: absolute; width: 200px; height: 200px; background: rgba(0, 212, 255, 0.8); border: 2px solid #00d4ff; box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .front { transform: translateZ(100px); background: url('smartwatch.jpg') center/cover; }
+        .back { transform: translateZ(-100px) rotateY(180deg); background: url('earbuds.jpg') center/cover; }
+        .left { transform: translateX(-100px) rotateY(-90deg); background: url('drone.jpg') center/cover; }
+        .right { transform: translateX(100px) rotateY(90deg); background: #00d4ff; }
+        @keyframes rotateCube { 0% { transform: rotateX(0) rotateY(0); } 100% { transform: rotateX(360deg) rotateY(360deg); } }
+        @keyframes pulseGlow { 0% { text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff; } 100% { text-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff; } }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="features.html">Features</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hero">
+      <h1>TechTrend Innovations: Made with Love</h1>
+      <div class="cube">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face right"></div>
+      </div>
+    </div>
+  </body>
+</html>
